@@ -6,33 +6,33 @@ using namespace std;
 class Student{
     public:
         static int count; // статическая переменная
-private:
-    double gpa;
-    string name;
+    private:
+        double gpa;
+        string name;
     
 
-public:
-    double get_gpa() const{
-        return this->gpa;
-    }
-    Student(string name, double gpa){
-        count++;
-        this->name = name;
-        this->gpa = gpa;
-        cout << name << "+" << endl;
-    }
+    public:
+        double get_gpa() const{
+            return this->gpa;
+        }
+        Student(string name, double gpa){
+            count++;
+            this->name = name;
+            this->gpa = gpa;
+            cout << name << "+" << endl;
+        }
 
-    Student(const Student& s){
-        count++;
-        this->name = s.name;
-        this->gpa = s.gpa;
-        cout << name << "+ copy" << endl;
-    }
+        Student(const Student& s){
+            count++;
+            this->name = s.name;
+            this->gpa = s.gpa;
+            cout << name << "+ copy" << endl;
+        }
 
-    ~Student(){
-        cout << name << "-" << ", count = " << this->count << endl;
-        count--;
-    }
+        ~Student(){
+            cout << name << "-" << ", count = " << this->count << endl;
+            count--;
+        }
 };
 
 int Student::count = 0; // инициализация статической переменной
